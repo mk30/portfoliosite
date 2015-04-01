@@ -20,7 +20,7 @@ var server = http.createServer(function (req, res) {
                 return h('div', [
                     h('img', {
                         src: 'images/' + x,
-                        height: 128
+                        height: 300 
                     })
                 ]);
             }))
@@ -29,7 +29,6 @@ var server = http.createServer(function (req, res) {
             .pipe(hyperstream({ '#content': str(tree) }))
             .pipe(res)
         ;
-        res.end(str(tree));
     }
 });
 server.listen(6004);
