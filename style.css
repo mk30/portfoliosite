@@ -9,5 +9,10 @@ div.body{
   padding: 1em;
 }
 
+div.img{
+  float: left;
+  overflow: hidden;
+}
+
 img.test{
     -webkit-mask-image: url('puff.png');
