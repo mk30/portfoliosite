@@ -1,6 +1,5 @@
 body{
-    background-image: url('tilewings.jpg');
-    background-size: cover;
+    background-color: #FFFFFF
 }
 div.body{
   width: 50%;
@@ -13,6 +12,3 @@ div.img{
   float: left;
   overflow: hidden;
 }
-
-img.test{
-    -webkit-mask-image: url('puff.png');
