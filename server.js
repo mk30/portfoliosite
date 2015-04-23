@@ -15,7 +15,7 @@ var server = http.createServer(function (req, res) {
     
     function onfiles (err, files) {
         var tree = h('div#content', [
-            h('h1', 'wow hello'),
+            h('h1', 'marina kukso'),
             h('div.gallery', files.map(function (x) {
                 return h('div.img', [
                     h('img', {

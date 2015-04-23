@@ -1,14 +1,23 @@
 body{
-    background-color: #FFFFFF
+    background-size: cover;
+    background-image: url("http://i.imgur.com/Cq5cbEr.png");
+    font-family: 'HussarPaneuropjskichLwCsObl'; 
+    font-weight: normal; 
+    font-style: normal;
 }
 div.body{
   width: 50%;
   background-color: rgba(255,255,255,0.6); 
-  margin: 0.7em 0;
-  padding: 10em;
 }
-
 div.img{
-  float: left;
+  display: inline-block;
+  padding: 5em;
+  margin: 1em 1em;
   overflow: hidden;
+}
+#palm{
+    position: absolute;
+    top: 0;
+    left: 0;
+
 }
