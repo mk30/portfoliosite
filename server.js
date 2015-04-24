@@ -20,7 +20,7 @@ var server = http.createServer(function (req, res) {
                 return h('div.img', [
                     h('img', {
                         src: 'images/' + x,
-                        height: 300 
+                        width: 500
                     })
                 ]);
             }))

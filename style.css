@@ -24,6 +24,16 @@ div.img{
     top: -80;
     left: -300;
 }
+#pine{
+    position: absolute;
+    top: 700;
+    left: -400;
+}
+#flamboyant{
+    position: absolute;
+    top: 1600;
+    left: -400;
+}
 h1{
     font-size: 300%;
 }
