@@ -11,7 +11,7 @@ div.body{
 div.img{
   display: inline-block;
   padding: 4px;
-  margin: 4em 4em;
+  margin: 3em 3em;
   overflow: hidden;
   background-image: -webkit-gradient(linear, left bottom,
   left top, color-stop(0.33, rgb(239,176,120)),
@@ -23,4 +23,7 @@ div.img{
     position: absolute;
     top: -80;
     left: -300;
+}
+h1{
+    font-size: 300%;
 }
