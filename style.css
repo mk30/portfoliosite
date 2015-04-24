@@ -1,23 +1,26 @@
 body{
     background-size: cover;
-    background-image: url("http://i.imgur.com/Cq5cbEr.png");
+    background-image: url("background.png");
     font-family: 'HussarPaneuropjskichLwCsObl'; 
     font-weight: normal; 
     font-style: normal;
 }
 div.body{
-  width: 50%;
   background-color: rgba(255,255,255,0.6); 
 }
 div.img{
   display: inline-block;
-  padding: 5em;
-  margin: 1em 1em;
+  padding: 4px;
+  margin: 4em 4em;
   overflow: hidden;
+  background-image: -webkit-gradient(linear, left bottom,
+  left top, color-stop(0.33, rgb(239,176,120)),
+  color-stop(0.67, rgb(233,152,122)));
+  background-image: -moz-linear-gradient(center bottom,
+  rgb(239,176,120) 33%, rgb(233,152,122) 67% );
 }
 #palm{
     position: absolute;
-    top: 0;
-    left: 0;
-
+    top: -80;
+    left: -300;
 }
