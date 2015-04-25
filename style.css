@@ -5,8 +5,8 @@ body{
     font-weight: normal; 
     font-style: normal;
 }
-div.body{
-  background-color: rgba(255,255,255,0.6); 
+div.gallery{
+  width: 90%;
 }
 div.img{
   display: inline-block;
@@ -29,10 +29,25 @@ div.img{
     top: 700;
     left: -400;
 }
-#flamboyant{
+#acai{
+    position: absolute;
+    top: 1100;
+    left: -400;
+}
+#banana{
     position: absolute;
     top: 1600;
-    left: -400;
+    left: -500;
+}
+#jacaranda{
+    position: absolute;
+    top: 1700;
+    left: -700;
+}
+#flamboyant{
+    position: absolute;
+    top: 2100;
+    left: -600;
 }
 h1{
     font-size: 300%;
