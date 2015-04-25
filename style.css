@@ -2,8 +2,11 @@ body{
     background-size: cover;
     background-image: url("background.png");
 }
+a {
+    text-decoration: none;
+}
 div {
-    border: 1px solid #000000;
+    border: 0px solid #000000;
 }
 #main{
     max-width: 800;
@@ -25,17 +28,21 @@ div.img{
 }
 #navleft{
     float: left;
-    width: 298px;
+    width: 33%;
 }
 #navright{
-    width: 298px;
-    float: right;
+    width: 33%;
+    float: left;
+}
+#navmiddle{
+    width: 33%;
+    float: left;
 }
 p{
     margin-bottom: 50;
-    font-family: 'AjarSansBold'; 
-    font-weight: bold; 
-    font-style: italic;
+    font-family: 'ABebederaHeavy'; 
+    font-weight: normal; 
+    font-style: normal; 
 }
 #palm{
     position: absolute;
