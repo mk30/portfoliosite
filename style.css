@@ -1,23 +1,41 @@
 body{
     background-size: cover;
     background-image: url("background.png");
-    font-family: 'HussarPaneuropjskichLwCsObl'; 
-    font-weight: normal; 
-    font-style: normal;
 }
-div.gallery{
-  width: 90%;
+div {
+    border: 1px solid #000000;
+}
+#main{
+    max-width: 800;
+    margin: 0 auto;
 }
 div.img{
   display: inline-block;
-  padding: 4px;
-  margin: 3em 3em;
+  padding: 6px;
+  margin: 1em 1em;
   overflow: hidden;
   background-image: -webkit-gradient(linear, left bottom,
   left top, color-stop(0.33, rgb(239,176,120)),
   color-stop(0.67, rgb(233,152,122)));
   background-image: -moz-linear-gradient(center bottom,
   rgb(239,176,120) 33%, rgb(233,152,122) 67% );
+}
+#header{
+    width: 700px;
+}
+#navleft{
+    float: left;
+    width: 298px;
+}
+#navright{
+    width: 298px;
+    float: right;
+}
+p{
+    margin-bottom: 50;
+    font-family: 'AjarSansBold'; 
+    font-weight: bold; 
+    font-style: italic;
 }
 #palm{
     position: absolute;
@@ -49,6 +67,15 @@ div.img{
     top: 2100;
     left: -600;
 }
+#planter{
+    position: absolute;
+    bottom: -1500px;
+    left: 50%;
+}
 h1{
     font-size: 300%;
+    font-family: 'HussarPaneuropjskichLwCsObl'; 
+    font-weight: normal; 
+    font-style: normal;
+    margin-bottom: -10;
 }
