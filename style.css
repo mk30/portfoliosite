@@ -52,6 +52,7 @@ p{
     font-family: 'ABebederaHeavy'; 
     font-weight: normal; 
     font-style: normal; 
+    color: #FFFFFF;
 }
 #palm{
     position: absolute;
@@ -88,7 +89,7 @@ p{
     padding: 0;
     position: absolute;
     bottom: 0px;
-    left: 0px;
+    left: -120px;
     right: 0px;
 }
 h1{
