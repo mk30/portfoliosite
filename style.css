@@ -5,6 +5,7 @@ body{
 }
 a {
     text-decoration: none;
+    color: #FFFFFF;
 }
 div {
     border: 0px solid #000000;
@@ -96,4 +97,5 @@ h1{
     font-weight: normal; 
     font-style: normal;
     margin-bottom: -10;
+    color: #FFFFFF;
 }
