@@ -14,7 +14,12 @@ router.addRoute('/', function (m){
 })
 router.addRoute('/images/:title', function (m){
     return h('div#content',[
-        m.params.title
+        h('div.img', [
+            h('img', {
+                src: 'lg_' + m.params.title + '.jpg',
+                width: 500
+            })
+        ])
     ]);
 })
 module.exports = router
