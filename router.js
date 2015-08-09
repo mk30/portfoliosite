@@ -12,4 +12,9 @@ router.addRoute('/', function (m){
         }))
     ]);
 })
+router.addRoute('/images/:title', function (m){
+    return h('div#content',[
+        m.params.title
+    ]);
+})
 module.exports = router
