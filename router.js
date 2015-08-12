@@ -12,7 +12,7 @@ router.addRoute('/', function (m){
         }))
     ]);
 })
-router.addRoute('/images/:title', function (m){
+router.addRoute('/gallery/:title', function (m){
     return h('div#content',[
         h('div.img', [
             h('img', {
