@@ -10,6 +10,7 @@ var router = require('./router.js');
 var server = http.createServer(function (req, res) {
     var m = router.match(req.url)
     if (m) {
+        console.log(m.params.title)
         fs.readdir(__dirname + '/images',
         function (err, files) {
             m.state = {files : files}

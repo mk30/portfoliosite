@@ -16,7 +16,7 @@ router.addRoute('/gallery/:title', function (m){
     return h('div#content',[
         h('div.img', [
             h('img', {
-                src: 'lg_' + m.params.title + '.jpg',
+                src: m.params.title,
                 width: 500
             })
         ])
