@@ -15,9 +15,9 @@ var server = http.createServer(function (req, res) {
             m.state = {files : files}
             var tree = m.fn(m);
             var html = req.url.split('/')[1] === 'gallery'
-                ? 'lightbox.html' : 'index.html'
+                ? '/public/lightbox.html' : '/public/index.html'
             fs.createReadStream(path.join(__dirname, html))
-                .pipe(hyperstream({ '#content': str(tree) }))
+                .pipe(hyperstream({ '#stage': str(tree) }))
                 .pipe(res)
         });
         
