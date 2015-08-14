@@ -1,7 +1,7 @@
 var h = require('virtual-dom/h');
 var router = require('routes')()
 router.addRoute('/', function (m){
-    return h('div.stage', [
+    return h('div#stage', [
         h('div.gallery', m.state.files.map(function (x) {
             return h('div', [ 
                 h('a', { 'href': '/gallery/' + x }, [
@@ -14,15 +14,14 @@ router.addRoute('/', function (m){
     ])
 })
 router.addRoute('/gallery/:title', function (m){
-    return h('div.stage', [
-        h('div.gallery', m.state.files.map(function (x) {
-            return h('div.players', [ 
-                h('img', {
-                    src: '/images/' + x
-                })
-            ])
-        }))
-    ])
+    return h('div#stage', m.state.files.map(function (x) {
+        return h('div.players', [ 
+            h('img', {
+                src: '/images/' + x
+            })
+        ])
+    })
+    )
 })
 /*
 router.addRoute('/gallery/:title', function (m){

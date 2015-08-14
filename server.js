@@ -17,7 +17,7 @@ var server = http.createServer(function (req, res) {
             var html = req.url.split('/')[1] === 'gallery'
                 ? '/public/lightbox.html' : '/public/index.html'
             fs.createReadStream(path.join(__dirname, html))
-                .pipe(hyperstream({ '#stage': str(tree) }))
+                .pipe(hyperstream({ '#content': str(tree) }))
                 .pipe(res)
         });
         
