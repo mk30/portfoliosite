@@ -50,6 +50,10 @@ img{
     text-align: center;
 }
 
+#x {
+	top: 10px;
+	right: 10px;
+}
 #prev {
 	top: 200px;
 	left: 10px;
