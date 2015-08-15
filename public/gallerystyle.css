@@ -23,7 +23,7 @@ img{
     height: 100%;
     border: 0px solid #000000;
 	width: 80%;
-	opacity: .7;
+	opacity: 1;
 	position: absolute;
 	-webkit-transition: -webkit-transform .6s cubic-bezier(0.455, 0.020, 0.000, 1.0);
 	-o-transition: -o-transform .6s cubic-bezier(0.455, 0.020, 0.000, 1.0);
