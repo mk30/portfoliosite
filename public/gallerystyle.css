@@ -11,6 +11,7 @@ img{
     bottom: 0;  
     left: 0;  
     right: 0;  
+    border: 1px solid #000000;
 }
 #stage{
 	height: 100%;
@@ -20,7 +21,7 @@ img{
 
 .players {
     height: 100%;
-    border: 1px solid #000000;
+    border: 0px solid #000000;
 	width: 80%;
 	opacity: .7;
 	position: absolute;
