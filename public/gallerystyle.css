@@ -3,6 +3,10 @@ body{
 	width: 100%;
 }
 
+img{
+	max-height: 100%;
+    margin: auto;
+}
 #stage{
 	height: 100%;
 	width: 100%;
@@ -12,8 +16,6 @@ body{
 .players {
   height: 100%;
 	width: 80%;
- 	border: 7px solid yellow;
-	background: pink;
 	opacity: .3;
 	position: absolute;
 	-webkit-transition: -webkit-transform .6s cubic-bezier(0.455, 0.020, 0.000, 1.0);
@@ -33,9 +35,12 @@ body{
 	width: 200px;
 	height: 100px;
 	position: fixed;
-	background: green;
 	z-index:10;
 	cursor: pointer;
+}
+
+.nav > h1 {
+    text-align: center;
 }
 
 #prev {
