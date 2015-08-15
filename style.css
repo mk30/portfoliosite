@@ -22,7 +22,7 @@ div {
 div.body{
     width: 50%;
 }
-div.img{
+.gallery img {
   display: inline-block;
   padding: 6px;
   margin: 1em 1em;
