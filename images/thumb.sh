@@ -1,7 +1,11 @@
 #!/bin/bash
-for file in `find ./full -iname \*.jpg`; do
-  rename '$_=lc' "$file"
-done
+#for file in `find ./full -iname \*.jpg`; do
+#  rename '$_=lc' "$file"
+#done
+
+i=0; for x in full/*.*;
+do mv $x full/`printf '%04d' $i`.jpg;
+i=$((i+1));done
 
 for file in `find ./full -iname \*.jpg`; do
   if test \! -f images/`basename $file`; then
