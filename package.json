@@ -4,15 +4,23 @@
   "description": "HTML slider logic",
   "main": "uxer-show.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node server.js",
+    "build": "browserify entry.js -o public/bundle.js"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:NHQ/uxer-show.git"
   },
   "dependencies": {
+    "browserify": "^11.0.1",
     "compute-style": "",
-    "short-id": ""
+    "ecstatic": "^0.8.0",
+    "hyperstream": "^1.2.2",
+    "path": "^0.11.14",
+    "short-id": "^0.1.0",
+    "virtual-dom": "^2.1.1",
+    "virtual-dom-stringify": "^3.0.1"
   },
   "keywords": [
     "html",
