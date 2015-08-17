@@ -10,7 +10,7 @@ var router = require('./router.js');
 var server = http.createServer(function (req, res) {
     var m = router.match(req.url)
     if (m) {
-        fs.readdir(__dirname + '/images',
+        fs.readdir(__dirname + '/public/images/large',
         function (err, files) {
             m.state = {files : files}
             var tree = m.fn(m);

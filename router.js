@@ -6,7 +6,7 @@ router.addRoute('/', function (m){
             return h('div', [ 
                 h('a', { 'href': '/gallery/' + x }, [
                     h('img', {
-                        src: '/images/thumbs/t_' + x
+                        src: '/public/images/thumbs/t_' + x
                     })
                 ]) 
             ])
@@ -17,7 +17,7 @@ router.addRoute('/gallery/:title', function (m){
     return h('div#stage', m.state.files.map(function (x) {
         return h('div.players', [ 
             h('img', {
-                src: '/images/' + x
+                src: '/public/images/large/' + x
             })
         ])
     })
