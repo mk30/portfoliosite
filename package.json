@@ -7,7 +7,7 @@
     "ecstatic": "^0.8.0",
     "hyperstream": "^1.2.2",
     "routes": "^2.1.0",
-    "short-id": "^0.1.0",
+    "short-id": "^0.0.0",
     "virtual-dom-stringify": "^3.0.1",
     "virtual-dom": "^2.1.1",
     "compute-style": "^0.2.0",
