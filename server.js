@@ -6,6 +6,11 @@ var st = ecstatic(__dirname);
 var hyperstream = require('hyperstream');
 var path = require('path');
 var router = require('./router.js');
+var alloc = require('tcp-bind');
+var fd = alloc(80);
+
+process.setgid(process.argv[3]);
+process.setuid(process.argv[2]);
 
 var server = http.createServer(function (req, res) {
     var m = router.match(req.url)
@@ -24,4 +29,4 @@ var server = http.createServer(function (req, res) {
     }
     else st(req, res);
 });
-server.listen(6004);
+server.listen({ fd: fd });
