@@ -20,8 +20,15 @@ div {
     margin: 0 auto;
 }
 div.body{
-    width: 50%;
+    float: left;
+    width: 100%;
+    background:rgba(0,0,0,0.5);
 }
+
+.body p {
+    margin: 20px;
+}
+
 .gallery img {
   display: inline-block;
   padding: 1px;
@@ -32,6 +39,7 @@ div.body{
 }
 #header{
     width: 700px;
+    background:rgba(0,0,0,0.7);
 }
 #navleft{
     float: left;
@@ -55,6 +63,13 @@ p{
     position: absolute;
     top: -80;
     left: -300;
+}
+#elf{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 #pine{
     position: absolute;
