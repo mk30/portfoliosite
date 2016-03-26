@@ -19,7 +19,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "browserify entry.js -o public/bundle.js"
+    "build": "browserify entry.js -o public/bundle.js",
+    "watch": "watchify router.js -o public/bundle.js -dv"
   },
   "repository": {
     "type": "git",
