@@ -20,11 +20,13 @@ var server = http.createServer(function (req, res) {
       m.state = {files : files}
       var tree = m.fn(m);
       var html;
-      if (html = req.url.split('/')[1] === 'gallery')
-        {'/public/lightbox.html'} 
-      else if (html = req.url.split('/')[1] === 'digital')
-        {'/public/lightbox.html'}
-      else {'/public/index.html'}
+      if (req.url.split('/')[1] === 'gall')
+        {html = '/public/index.html'} 
+      else if (req.url.split('/')[1] === 'gallery')
+        {html = '/public/lightbox.html'} 
+      else if (req.url.split('/')[1] === 'digital')
+        {html = '/public/lightbox.html'}
+      else {html = '/public/index.html'}
       fs.createReadStream(path.join(__dirname, html))
         .pipe(hyperstream({ '#content': str(tree) }))
         .pipe(res)

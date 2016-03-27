@@ -24,4 +24,28 @@ router.addRoute('/gallery/:title', function (m){
     ])
   }))
 })
+router.addRoute('/dig', function (m){
+  return h('div#stage', [
+    h('div.gallery', 
+      m.state.files.map(function (x) {
+        return h('div', [ 
+          h('a', { 'href': '/gallery/' + x }, [
+            h('img', {
+              src: '/public/digital/thumbs/t_' + x
+            })
+          ]) 
+        ])
+      })
+    )
+  ])
+})
+router.addRoute('/digital/:title', function (m){
+  return h('div#stage', m.state.files.map(function (x) {
+    return h('div.players', [ 
+      h('img', {
+        src: '/public/digital/large/' + x
+      })
+    ])
+  }))
+})
 module.exports = router
