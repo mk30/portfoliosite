@@ -1,0 +1,15 @@
+body{
+  background-size: cover;
+  margin: 0;
+  background-image: url("bigcats.png");
+  font-family: Arial, Helvetica, sans-serif;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.6);
+}
+a{
+  color: #FFFFFF;
+  font-size: 85%;
+}
+h1{
+  text-shadow: -4px 3px 0 #3a50d9, -14px 7px 0 #0a0e27;
+}
