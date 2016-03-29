@@ -55,28 +55,44 @@ router.addRoute('/gallery/:title', function (m){
   }))
 })
 */
-router.addRoute('/dig', function (m){
-  return h('div#stage', [
-    h('div.gallery', 
-      m.state.files.map(function (x) {
-        return h('div', [ 
-          h('a', { 'href': '/gallery/' + x }, [
-            h('img', {
-              src: '/public/digital/thumbs/t_' + x
-            })
-          ]) 
-        ])
-      })
-    )
-  ])
+router.addRoute('/dig', function (m, req, res){
+  fs.readdir(__dirname + '/public/digital/large',
+    function (err, files) {
+      var html = '/public/digital.html'
+      var tree = h('div#stage', [
+        h('div.gallery', 
+          files.map(function (x) {
+            return h('div', [ 
+              h('a', { 'href': '/digital/' + x }, [
+                h('img', {
+                  src: '/public/digital/thumbs/t_' + x
+                })
+              ]) 
+            ])
+          })
+        )
+      ])
+      fs.createReadStream(path.join(__dirname, html))
+        .pipe(hyperstream({ '#content': str(tree) }))
+        .pipe(res)
+    })
 })
-router.addRoute('/digital/:title', function (m){
-  return h('div#stage', m.state.files.map(function (x) {
-    return h('div.players', [ 
-      h('img', {
-        src: '/public/digital/large/' + x
-      })
-    ])
-  }))
+router.addRoute('/digital/:title', function (m, req, res){
+  fs.readdir(__dirname + '/public/digital/large',
+    function (err, files) {
+      var html = '/public/lightboxm.html'
+      var tree = h('div#stage', 
+        files.map(function (x) {
+          return h('div.players', [ 
+            h('img', {
+              src: '/public/digital/large/' + x
+            })
+          ])
+        })
+      )
+      fs.createReadStream(path.join(__dirname, html))
+        .pipe(hyperstream({ '#content': str(tree) }))
+        .pipe(res)
+    })
 })
 module.exports = router
