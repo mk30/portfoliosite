@@ -4,17 +4,17 @@ var path = require('path');
 var h = require('virtual-dom/h');
 var str = require('virtual-dom-stringify');
 var router = require('routes')();
-router.addRoute('/gall', function (m, req, res){
-  fs.readdir(__dirname + '/public/images/large',
+router.addRoute('/mos', function (m, req, res){
+  fs.readdir(__dirname + '/public/mosaics/large',
     function (err, files) {
-      var html = '/public/index.html'
+      var html = '/public/mosaic.html'
       var tree = h('div#stage', [
         h('div.gallery', 
           files.map(function (x) {
             return h('div', [ 
-              h('a', { 'href': '/gallery/' + x }, [
+              h('a', { 'href': '/mosaics/' + x }, [
                 h('img', {
-                  src: '/public/images/thumbs/t_' + x
+                  src: '/public/mosaics/thumbs/t_' + x
                 })
               ]) 
             ])
@@ -26,15 +26,15 @@ router.addRoute('/gall', function (m, req, res){
         .pipe(res)
     })
 })
-router.addRoute('/gallery/:title', function (m, req, res){
-  fs.readdir(__dirname + '/public/images/large',
+router.addRoute('/mosaics/:title', function (m, req, res){
+  fs.readdir(__dirname + '/public/mosaics/large',
     function (err, files) {
-      var html = '/public/lightbox.html'
+      var html = '/public/lightboxm.html'
       var tree = h('div#stage', 
         files.map(function (x) {
           return h('div.players', [ 
             h('img', {
-              src: '/public/images/large/' + x
+              src: '/public/mosaics/large/' + x
             })
           ])
         })

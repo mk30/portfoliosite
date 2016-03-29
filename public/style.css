@@ -13,7 +13,7 @@ div {
 #wrapper {
     position: relative;
     margin: 0;
-    padding-bottom: 200;
+    padding-bottom: 0;
 }
 #main{
     max-width: 800;
