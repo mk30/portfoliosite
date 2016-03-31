@@ -1,9 +1,18 @@
 var fs = require('fs');
+var ecstatic = require('ecstatic');
 var hyperstream = require('hyperstream');
 var path = require('path');
 var h = require('virtual-dom/h');
 var str = require('virtual-dom-stringify');
 var router = require('routes')();
+router.addRoute('/', function (m, req, res){
+  fs.readdir(__dirname + '/public',
+    function (err, files) {
+      var st = ecstatic(__dirname + '/public');
+      st(req, res)
+    }
+  )
+})
 router.addRoute('/mos', function (m, req, res){
   fs.readdir(__dirname + '/public/mosaics/large',
     function (err, files) {
@@ -21,10 +30,11 @@ router.addRoute('/mos', function (m, req, res){
           })
         )
       ])
-      fs.createReadStream(path.join(__dirname, html))
-        .pipe(hyperstream({ '#content': str(tree) }))
-        .pipe(res)
-    })
+    fs.createReadStream(path.join(__dirname, html))
+      .pipe(hyperstream({ '#content': str(tree) }))
+      .pipe(res)
+    }
+  )
 })
 router.addRoute('/mosaics/:title', function (m, req, res){
   fs.readdir(__dirname + '/public/mosaics/large',
