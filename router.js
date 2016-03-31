@@ -6,12 +6,8 @@ var h = require('virtual-dom/h');
 var str = require('virtual-dom-stringify');
 var router = require('routes')();
 router.addRoute('/', function (m, req, res){
-  fs.readdir(__dirname + '/public',
-    function (err, files) {
-      var st = ecstatic(__dirname + '/public');
-      st(req, res)
-    }
-  )
+  var st = ecstatic(__dirname + '/public');
+  st(req, res)
 })
 router.addRoute('/mos', function (m, req, res){
   fs.readdir(__dirname + '/public/mosaics/large',
