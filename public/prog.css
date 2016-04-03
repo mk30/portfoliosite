@@ -1,5 +1,5 @@
 body{
-  background-size: contain;
+  background-size: auto;
   margin: 0;
   background-image: url("snowyextwing.png");
   font-family: monospace;
@@ -13,7 +13,6 @@ body{
 }
 a{
   color: inherit;
-  font-size: 85%;
 }
 div {
   width: 100%;  
