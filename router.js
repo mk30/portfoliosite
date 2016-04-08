@@ -86,7 +86,7 @@ router.addRoute('/dig', function (m, req, res){
 router.addRoute('/digital/:title', function (m, req, res){
   fs.readdir(__dirname + '/public/digital/large',
     function (err, files) {
-      var html = '/public/lightboxm.html'
+      var html = '/public/lightboxd.html'
       var tree = h('div#stage', 
         files.map(function (x) {
           return h('div.players', [ 
