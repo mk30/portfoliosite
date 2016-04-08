@@ -7,21 +7,21 @@ body{
   font-family: monospace;
   background-position: top;
   background-repeat: no-repeat;
-  padding: 5px;
+  padding: 0 5px;
 }
 a{
   color: inherit;
 }
 h1{
-  color: #CCCCCC;
+  color: #DDDDDD;
   text-shadow: 
-    2px 2px 2px rgba(214, 0, 0, 0.6),
-    -2px -2px 1px black;
+    2px 2px 3px rgba(214, 0, 0, 1),
+    -2px -2px 0px black;
 }
 #wrapper {
   position: relative;
   margin: 0 auto;
-  padding-bottom: 10;
+  padding-bottom: 20;
   overflow: auto;
 }
 div.header {
@@ -30,6 +30,7 @@ div.header {
 #navleft{
   float: left;
   width: 49%;
+  clear: both;
 }
 #navright{
   width: 49%;
@@ -37,6 +38,6 @@ div.header {
 }
 img.block{
   display:block;
-  border: 4px solid #DDDDDD;
+  border: 1px solid #DDDDDD;
   width: 60%;
 }
