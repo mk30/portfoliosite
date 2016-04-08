@@ -1,26 +1,42 @@
 body{
-  background-size: auto;
+  color: #DDDDDD;
+  background-image: url("/public/blueorbs.png");
+  background-color: #130064;
+  background-size: cover;
   margin: 0;
-  background-image: url("snowyextwing.png");
   font-family: monospace;
-  background-position: top right;
+  background-position: top;
   background-repeat: no-repeat;
-  color: #421700;
-  text-shadow: 
-    2px 0px 1px rgba(255, 255, 255, 1),
-    1px 1px 1px rgba(255, 255, 255, 1)
-  ;
+  padding: 5px;
 }
 a{
   color: inherit;
 }
-div {
-  width: 100%;  
-}
 h1{
-  color: SpringGreen;
+  color: #CCCCCC;
   text-shadow: 
     2px 2px 2px rgba(214, 0, 0, 0.6),
     -2px -2px 1px black;
-
+}
+#wrapper {
+  position: relative;
+  margin: 0 auto;
+  padding-bottom: 10;
+  overflow: auto;
+}
+div.header {
+  padding: 0 0 20 0;
+}
+#navleft{
+  float: left;
+  width: 49%;
+}
+#navright{
+  width: 49%;
+  float: right;
+}
+img.block{
+  display:block;
+  border: 4px solid #DDDDDD;
+  width: 60%;
 }
