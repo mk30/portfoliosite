@@ -1,37 +1,27 @@
 var h = require('virtual-dom/h');
-var router = require('routes')()
+var router = require('routes')();
 router.addRoute('/', function (m){
-    return h('div#stage', [
-        h('div.gallery', m.state.files.map(function (x) {
-            return h('div', [ 
-                h('a', { 'href': '/gallery/' + x }, [
-                    h('img', {
-                        src: '/public/images/thumbs/t_' + x
-                    })
-                ]) 
-            ])
-        }))
-    ])
-})
-router.addRoute('/gallery/:title', function (m){
-    return h('div#stage', m.state.files.map(function (x) {
-        return h('div.players', [ 
+  return h('div#stage', [
+    h('div.gallery', 
+      m.state.files.map(function (x) {
+        return h('div', [ 
+          h('a', { 'href': '/gallery/' + x }, [
             h('img', {
-                src: '/public/images/large/' + x
+              src: '/public/images/thumbs/t_' + x
             })
+          ]) 
         ])
-    })
+      })
     )
+  ])
 })
-/*
 router.addRoute('/gallery/:title', function (m){
-    return h('div#content',[
-        h('div.img', [
-            h('img', {
-                src: '/images/' + m.params.title
-            })
-        ])
-    ]);
+  return h('div#stage', m.state.files.map(function (x) {
+    return h('div.players', [ 
+      h('img', {
+        src: '/public/images/large/' + x
+      })
+    ])
+  }))
 })
-*/
 module.exports = router
