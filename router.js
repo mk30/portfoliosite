@@ -64,6 +64,7 @@ router.addRoute('/gallery/:title', function (m){
 router.addRoute('/dig', function (m, req, res){
   fs.readdir(__dirname + '/public/digital/large',
     function (err, files) {
+      files.sort(function (a,b) { return parseInt(a)<parseInt(b)?-1:1 })
       var html = '/public/digital.html'
       var tree = h('div#stage', [
         h('div.gallery', 
@@ -86,6 +87,7 @@ router.addRoute('/dig', function (m, req, res){
 router.addRoute('/digital/:title', function (m, req, res){
   fs.readdir(__dirname + '/public/digital/large',
     function (err, files) {
+      files.sort(function (a,b) { return parseInt(a)<parseInt(b)?-1:1 })
       var html = '/public/lightboxd.html'
       var tree = h('div#stage', 
         files.map(function (x) {
