@@ -1,0 +1,43 @@
+body{
+  color: #DDDDDD;
+  background-image: url("/public/blueorbs.png");
+  background-color: #130064;
+  background-size: cover;
+  margin: 0;
+  font-family: monospace;
+  background-position: top;
+  background-repeat: no-repeat;
+  padding: 0 5px;
+}
+a{
+  color: inherit;
+}
+h1{
+  color: #DDDDDD;
+  text-shadow: 
+    2px 2px 3px rgba(214, 0, 0, 1),
+    -2px -2px 0px black;
+}
+#wrapper {
+  position: relative;
+  margin: 0 auto;
+  padding-bottom: 20;
+  overflow: auto;
+}
+div.header {
+  padding: 0 0 20 0;
+}
+#navleft{
+  float: left;
+  width: 49%;
+  clear: both;
+}
+#navright{
+  width: 49%;
+  float: right;
+}
+img.block{
+  display:block;
+  border: 1px solid #DDDDDD;
+  width: 60%;
+}
