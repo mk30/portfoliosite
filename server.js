@@ -7,7 +7,7 @@ var hyperstream = require('hyperstream');
 var path = require('path');
 var router = require('./router.js');
 var alloc = require('tcp-bind');
-var fd = alloc(80);
+var fd = alloc(82);
 
 process.setgid(process.argv[3]);
 process.setuid(process.argv[2]);
