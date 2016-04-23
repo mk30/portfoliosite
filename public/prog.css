@@ -2,7 +2,7 @@ body{
   color: #DDDDDD;
   text-shadow: 
     1px 1px 2px black;
-  background-image: url("/public/blueorbs1.jpg");
+  background-image: url("/blueorbs1.jpg");
   background-color: #130064;
   background-size: cover;
   margin: 0;
