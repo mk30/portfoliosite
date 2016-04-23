@@ -3,7 +3,9 @@ body{
     margin: 0;
     background-image: url("backgroundlong.jpg");
     font-family: monospace;
-    color: #FFFFFF
+    color: white;
+    text-shadow:
+      1px 1px 1px orange;
 }
 a {
     color: #FFFFFF;
@@ -38,45 +40,36 @@ p{
     margin-bottom: 50;
     font-weight: normal; 
     font-style: normal; 
-    color: #FFFFFF;
+}
+#dypsis{
+    position: absolute;
+    top: 200;
+    left: -300;
 }
 #palm{
     position: absolute;
-    top: -80;
-    left: -300;
-}
-#pine{
-    position: absolute;
-    top: 700;
-    left: -400;
+    top: 1700;
+    left: -380;
 }
 #acai{
     position: absolute;
-    top: 1100;
-    left: -400;
+    top: 900;
+    left: -200;
 }
 #banana{
     position: absolute;
-    top: 1600;
+    top: 2300;
     left: -500;
 }
 #jacaranda{
     position: absolute;
-    top: 1700;
+    top: 2400;
     left: -700;
 }
 #flamboyant{
     position: absolute;
-    top: 2100;
+    top: 2800;
     left: -600;
-}
-#planter{
-    margin: 0 auto;
-    padding: 0;
-    position: absolute;
-    bottom: 0px;
-    left: -120px;
-    right: 0px;
 }
 h1{
     font-size: 300%;
