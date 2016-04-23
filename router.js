@@ -19,7 +19,7 @@ router.addRoute('/mos', function (m, req, res){
             return h('div', [ 
               h('a', { 'href': '/mosaics/' + x }, [
                 h('img', {
-                  src: '/public/mosaics/thumbs/t_' + x
+                  src: '/mosaics/thumbs/t_' + x
                 })
               ]) 
             ])
@@ -40,7 +40,7 @@ router.addRoute('/mosaics/:title', function (m, req, res){
         files.map(function (x) {
           return h('div.players', [ 
             h('img', {
-              src: '/public/mosaics/large/' + x
+              src: '/mosaics/large/' + x
             })
           ])
         })
@@ -72,7 +72,7 @@ router.addRoute('/dig', function (m, req, res){
             return h('div', [ 
               h('a', { 'href': '/digital/' + x }, [
                 h('img', {
-                  src: '/public/digital/thumbs/t_' + x
+                  src: '/digital/thumbs/t_' + x
                 })
               ]) 
             ])
@@ -93,7 +93,7 @@ router.addRoute('/digital/:title', function (m, req, res){
         files.map(function (x) {
           return h('div.players', [ 
             h('img', {
-              src: '/public/digital/large/' + x
+              src: '/digital/large/' + x
             })
           ])
         })
