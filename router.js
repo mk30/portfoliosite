@@ -103,4 +103,32 @@ router.addRoute('/digital/:title', function (m, req, res){
         .pipe(res)
     })
 })
+router.addRoute('/blog', function (m, req, res){
+  var blogposts = []
+  function done (){
+    var html = '/public/blog.html'
+    var tree = h('div.blogposts', 
+      blogposts.map(function (x) {
+        return h('div', [ 
+          h('p', x)
+        ])
+      })
+    )
+    fs.createReadStream(path.join(__dirname, html))
+      .pipe(hyperstream({ '#content': str(tree) }))
+      .pipe(res)
+  }
+  fs.readdir(__dirname + '/public/blog/', function (err, files) {
+    function cb (error, contents){
+      if (error) console.log(error)
+      else blogposts.push(contents)    
+      console.log(blogposts)
+      if (--i === 0) done ()
+    }
+    var i = files.length
+    files.forEach(function(file){
+      fs.readFile(__dirname + '/public/blog/' + file, 'utf8', cb)
+    })
+  })
+})
 module.exports = router
