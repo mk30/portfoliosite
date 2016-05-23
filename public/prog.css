@@ -42,4 +42,5 @@ img.block{
   display:block;
   border: 1px solid #DDDDDD;
   width: 60%;
+  background: linear-gradient(to bottom, indigo, white);
 }
