@@ -4,6 +4,7 @@ var hyperstream = require('hyperstream');
 var path = require('path');
 var h = require('virtual-dom/h');
 var str = require('virtual-dom-stringify');
+var parser = require('virtual-html');
 var router = require('routes')();
 router.addRoute('/', function (m, req, res){
   var st = ecstatic(__dirname + '/public');
@@ -50,17 +51,6 @@ router.addRoute('/mosaics/:title', function (m, req, res){
         .pipe(res)
     })
 })
-/*
-router.addRoute('/gallery/:title', function (m){
-  return h('div#stage', m.state.files.map(function (x) {
-    return h('div.players', [ 
-      h('img', {
-        src: '/public/images/large/' + x
-      })
-    ])
-  }))
-})
-*/
 router.addRoute('/dig', function (m, req, res){
   fs.readdir(__dirname + '/public/digital/large',
     function (err, files) {
@@ -102,33 +92,12 @@ router.addRoute('/digital/:title', function (m, req, res){
         .pipe(hyperstream({ '#content': str(tree) }))
         .pipe(res)
     })
-})
-router.addRoute('/blog', function (m, req, res){
-  var blogposts = []
-  function done (){
-    var html = '/public/blog.html'
-    var tree = h('div.blogposts', 
-      blogposts.map(function (x) {
-        return h('div', [ 
-          h('p', x)
-        ])
-      })
-    )
-    fs.createReadStream(path.join(__dirname, html))
-      .pipe(hyperstream({ '#content': str(tree) }))
-      .pipe(res)
-  }
-  fs.readdir(__dirname + '/public/blog/', function (err, files) {
-    function cb (error, contents){
-      if (error) console.log(error)
-      else blogposts.push(contents)    
-      console.log(blogposts)
-      if (--i === 0) done ()
-    }
-    var i = files.length
-    files.forEach(function(file){
-      fs.readFile(__dirname + '/public/blog/' + file, 'utf8', cb)
-    })
   })
+router.addRoute('/blog', function (m, req, res){
+  var hs = hyperstream({
+    '#content': fs.createReadStream(__dirname + '/public/blog/a.html'),
+  })
+  var rs = fs.createReadStream(__dirname + '/public/blog.html')
+  rs.pipe(hs).pipe(res)
 })
 module.exports = router
