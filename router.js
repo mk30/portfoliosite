@@ -1,6 +1,7 @@
 var fs = require('fs');
 var ecstatic = require('ecstatic');
 var hyperstream = require('hyperstream');
+var eventstream = require('event-stream');
 var path = require('path');
 var h = require('virtual-dom/h');
 var str = require('virtual-dom-stringify');
@@ -94,8 +95,12 @@ router.addRoute('/digital/:title', function (m, req, res){
     })
   })
 router.addRoute('/blog', function (m, req, res){
+  var es = eventstream.merge([
+    fs.createReadStream(__dirname + '/public/blog/a.html'),
+    fs.createReadStream(__dirname + '/public/blog/b.html')
+])
   var hs = hyperstream({
-    '#content': fs.createReadStream(__dirname + '/public/blog/a.html'),
+    '#content': es,
   })
   var rs = fs.createReadStream(__dirname + '/public/blog.html')
   rs.pipe(hs).pipe(res)

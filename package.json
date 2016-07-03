@@ -6,6 +6,7 @@
   "dependencies": {
     "compute-style": "^0.2.0",
     "ecstatic": "^0.8.0",
+    "event-stream": "^3.3.3",
     "html2hscript": "^2.0.1",
     "hyperstream": "^1.2.2",
     "path": "^0.11.14",
