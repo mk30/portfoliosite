@@ -95,14 +95,20 @@ router.addRoute('/digital/:title', function (m, req, res){
     })
   })
 router.addRoute('/blog', function (m, req, res){
-  var es = eventstream.merge([
-    fs.createReadStream(__dirname + '/public/blog/a.html'),
-    fs.createReadStream(__dirname + '/public/blog/b.html')
-])
-  var hs = hyperstream({
-    '#content': es,
-  })
-  var rs = fs.createReadStream(__dirname + '/public/blog.html')
-  rs.pipe(hs).pipe(res)
+  var postsarray = []
+  fs.readdir(__dirname + '/public/blog',
+    function (err, files) {
+      files.map(function(x){
+        var es = eventstream.merge([
+          fs.createReadStream(__dirname + '/public/blog/' + x)
+        ])
+        var hs = hyperstream({
+          '#content': es,
+        })
+        var rs = fs.createReadStream(__dirname + '/public/blog.html')
+        rs.pipe(hs).pipe(res)
+      })
+    }
+  )
 })
 module.exports = router
