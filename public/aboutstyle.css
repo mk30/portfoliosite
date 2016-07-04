@@ -1,0 +1,18 @@
+body{
+  background-size: cover;
+  margin: 0;
+  background-image: url("/vamp.jpg");
+  font-family: monospace;
+  background-position: top right;
+  background-repeat: no-repeat;
+  color: #c4ffdd;
+  text-shadow:
+    1px 1px 2px black;
+}
+a{
+  color: inherit;
+}
+h1{
+  color: #ff9daf;
+  text-shadow: -3px 2px 0 #ff6e00 , 4px -3px 0 #760009;
+}

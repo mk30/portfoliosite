@@ -1,0 +1,30 @@
+body{
+  background-size: cover;
+  margin: 20px;
+  background-image: url("desertnight.gif");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: monospace;
+  background-position: top right;
+  background-repeat: no-repeat;
+  color: #c8ced4;
+  text-shadow:
+    1px 1px 2px black;
+ 
+}
+a{
+  color: inherit;
+}
+h1{
+  color: #a821af;
+  text-shadow: -3px 2px 0 #ff6e00 , 4px -3px 0 #760009;
+}
+img{
+  max-width: 400px;
+  padding: 0px;
+  margin: 10px;
+  border: 3px solid gray;
+}
+p{
+  padding: 5px;
+}
