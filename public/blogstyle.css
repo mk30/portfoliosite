@@ -10,7 +10,6 @@ body{
   color: #c8ced4;
   text-shadow:
     1px 1px 2px black;
- 
 }
 a{
   color: inherit;
@@ -27,4 +26,10 @@ img{
 }
 p{
   padding: 5px;
+}
+.image {
+  max-width: 400px;
+  padding: 3px;
+  margin: 5px;
+  text-align: center;
 }
