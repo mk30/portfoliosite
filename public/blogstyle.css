@@ -45,6 +45,14 @@ p{
   text-align: center;
   border: 0px solid red;
 }
-.paragraph {
+.imageright {
+  float: right;
+  max-width: 426px;
+  padding: 3px;
+  text-align: center;
+  border: 0px solid red;
+
+}
+.paragraphwide {
   clear: both;
 }
