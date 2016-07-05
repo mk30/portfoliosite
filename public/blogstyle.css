@@ -17,13 +17,10 @@ a{
 h1 #blogtitle{
   color: aqua;
   text-shadow: -3px 2px 0 white , 4px -3px 0 purple;
-  <!--
-  color: #a821af;
-  text-shadow: -3px 2px 0 #ff6e00 , 4px -3px 0 #760009;
-
-  color: aqua;
-  text-shadow: -3px 2px 0 white , 4px -3px 0 green;
-  --->
+  xcolor: #a821af;
+  xtext-shadow: -3px 2px 0 #ff6e00 , 4px -3px 0 #760009;
+  xcolor: aqua;
+  xtext-shadow: -3px 2px 0 white , 4px -3px 0 green;
   font-size: 150%;
 }
 #blogsubtitle {
