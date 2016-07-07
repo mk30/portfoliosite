@@ -97,8 +97,11 @@ router.addRoute('/digital/:title', function (m, req, res){
 router.addRoute('/blog', function (m, req, res){
   fs.readdir(__dirname + '/public/blog',
     function (err, files) {
+      function isHTML (file){
+        return file.match(/\b(html)\b/)
+      }
       var es = eventstream.merge(
-        files.map(function(x){
+        files.filter(isHTML).sort().reverse().map(function(x){
           return fs.createReadStream(__dirname + '/public/blog/' + x)
         })
       )
