@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "brfs": "^1.4.3",
     "compute-style": "^0.2.0",
     "ecstatic": "^0.8.0",
     "event-stream": "^3.3.3",
@@ -22,7 +23,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "browserify entry.js -o public/bundle.js",
+    "build": "browserify entry.js -o public/bundle.js -t brfs",
     "watch": "watchify router.js -o public/bundle.js -dv"
   },
   "repository": {
