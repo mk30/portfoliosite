@@ -7,10 +7,12 @@ var h = require('virtual-dom/h');
 var str = require('virtual-dom-stringify');
 var parser = require('virtual-html');
 var router = require('routes')();
+
 router.addRoute('/', function (m, req, res){
   var st = ecstatic(__dirname + '/public');
   st(req, res)
 })
+
 router.addRoute('/mos', function (m, req, res){
   fs.readdir(__dirname + '/public/mosaics/large',
     function (err, files) {
@@ -19,7 +21,7 @@ router.addRoute('/mos', function (m, req, res){
         h('div.gallery', 
           files.map(function (x) {
             return h('div', [ 
-              h('a', { 'href': '/mosaics/' + x }, [
+              h('a', { 'href': '/mosaics/large/' + x }, [
                 h('img', {
                   src: '/mosaics/thumbs/t_' + x
                 })
@@ -61,7 +63,7 @@ router.addRoute('/dig', function (m, req, res){
         h('div.gallery', 
           files.map(function (x) {
             return h('div', [ 
-              h('a', { 'href': '/digital/' + x }, [
+              h('a', { 'href': '/digital/large/' + x }, [
                 h('img', {
                   src: '/digital/thumbs/t_' + x
                 })
@@ -94,6 +96,48 @@ router.addRoute('/digital/:title', function (m, req, res){
         .pipe(res)
     })
   })
+router.addRoute('/ink', function (m, req, res){
+  fs.readdir(__dirname + '/public/ink/large',
+    function (err, files) {
+      var html = '/public/ink.html'
+      var tree = h('div#stage', [
+        h('div.gallery', 
+          files.map(function (x) {
+            return h('div', [ 
+              h('a', { 'href': '/ink/large/' + x }, [
+                h('img', {
+                  src: '/ink/thumbs/t_' + x
+                })
+              ]) 
+            ])
+          })
+        )
+      ])
+    fs.createReadStream(path.join(__dirname, html))
+      .pipe(hyperstream({ '#content': str(tree) }))
+      .pipe(res)
+    }
+  )
+})
+router.addRoute('/ink/:title', function (m, req, res){
+  fs.readdir(__dirname + '/ink/mosaics/large',
+    function (err, files) {
+      var html = '/public/lightboxm.html'
+      var tree = h('div#stage', 
+        files.map(function (x) {
+          return h('div.players', [ 
+            h('img', {
+              src: '/ink/large/' + x
+            })
+          ])
+        })
+      )
+      fs.createReadStream(path.join(__dirname, html))
+        .pipe(hyperstream({ '#content': str(tree) }))
+        .pipe(res)
+    })
+})
+/*
 router.addRoute('/blog', function (m, req, res){
   fs.readdir(__dirname + '/public/blog',
     function (err, files) {
@@ -113,4 +157,5 @@ router.addRoute('/blog', function (m, req, res){
     }
   )
 })
+*/
 module.exports = router
